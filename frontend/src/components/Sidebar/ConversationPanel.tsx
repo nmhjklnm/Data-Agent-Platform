@@ -446,6 +446,14 @@ export default function ConversationPanel({
                           fontWeight: active ? 500 : 400,
                         }}
                       >
+                        {conv.channel && conv.channel !== 'web' && (
+                          <span
+                            style={{ marginRight: 4 }}
+                            title={`来自${conv.channel === 'weixin' ? '微信' : conv.channel === 'feishu' ? '飞书' : conv.channel}`}
+                          >
+                            {conv.channel === 'weixin' ? '💬' : conv.channel === 'feishu' ? '🪶' : '🔗'}
+                          </span>
+                        )}
                         {conv.title || '新对话'}
                       </Text>
                     )}

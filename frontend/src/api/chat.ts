@@ -7,6 +7,7 @@ export interface Conversation {
   data_space_ids: string[] | null
   title: string | null
   model_id: string
+  channel?: string | null // 'weixin'/'feishu' 来自渠道；'web'/null 为网页
   created_at: string
   updated_at: string
 }
